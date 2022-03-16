@@ -1,0 +1,25 @@
+.wrapperNavbar{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+
+    img{
+        margin-left: 100px;
+        padding: 15px 0 15px 0;
+    }
+
+    &__link{
+        display: flex;
+        list-style: none;
+        justify-content: end;
+        align-items: center;
+        margin-right: 10vh; 
+        li{
+           margin-right: 40px; 
+           font-weight: bold;
+        }
+    }
+
+    
+
+}
