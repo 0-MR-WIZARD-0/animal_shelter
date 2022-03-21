@@ -1,22 +1,19 @@
+@import '../../style/colors.scss';
+
 .wrapperHeader{
 
     position: relative;
-    min-height: 560px;
     padding: 210px 210px;
-    margin-bottom: 320px;
+    min-height: 703px;
 
     &__content{
 
         max-width: 440px;
 
-        h1{
-            font-size: 80px;
-        }
-
-        *{
-            margin-bottom: 5px;
+        p{
             font-weight: bold;
             word-spacing: 5px;
+            
         }
 
         p:nth-child(3){
@@ -39,4 +36,9 @@
         }
 
     }
+
+    h1{
+        font-size: 80px;
+    }
+
 }
