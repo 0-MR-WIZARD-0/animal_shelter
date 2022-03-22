@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/animal_shelter/static/css/main.18eb0131.css",
-    "main.js": "/animal_shelter/static/js/main.439ebd1e.js",
+    "main.js": "/animal_shelter/static/js/main.10798e93.js",
     "static/media/slide.jpg": "/animal_shelter/static/media/slide.02aca2c365e5857625c5.jpg",
     "static/media/koteika.jpg": "/animal_shelter/static/media/koteika.6bb12e3062e1644c586b.jpg",
     "static/media/banner-tablet@1x.jpg": "/animal_shelter/static/media/banner-tablet@1x.cb57cf40bcc70d9b9322.jpg",
@@ -19,10 +19,10 @@
     "static/media/icon-arrow-left.svg": "/animal_shelter/static/media/icon-arrow-left.02ae790fb4cabaaa6f8b1def924a49e5.svg",
     "static/media/icon-arrow.svg": "/animal_shelter/static/media/icon-arrow.02ae790fb4cabaaa6f8b1def924a49e5.svg",
     "main.18eb0131.css.map": "/animal_shelter/static/css/main.18eb0131.css.map",
-    "main.439ebd1e.js.map": "/animal_shelter/static/js/main.439ebd1e.js.map"
+    "main.10798e93.js.map": "/animal_shelter/static/js/main.10798e93.js.map"
   },
   "entrypoints": [
     "static/css/main.18eb0131.css",
-    "static/js/main.439ebd1e.js"
+    "static/js/main.10798e93.js"
   ]
 }
