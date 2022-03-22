@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/animal-shelter/static/css/main.0c11d1a5.css",
+    "main.js": "/animal-shelter/static/js/main.e63ea45a.js",
+    "static/media/slide.jpg": "/animal-shelter/static/media/slide.02aca2c365e5857625c5.jpg",
+    "static/media/koteika.jpg": "/animal-shelter/static/media/koteika.6bb12e3062e1644c586b.jpg",
+    "static/media/banner-tablet@1x.jpg": "/animal-shelter/static/media/banner-tablet@1x.cb57cf40bcc70d9b9322.jpg",
+    "static/media/icon-walk.svg": "/animal-shelter/static/media/icon-walk.14305c3caca67c9c9588a4161d8cc2cb.svg",
+    "static/media/icon-veterinarian.svg": "/animal-shelter/static/media/icon-veterinarian.aa764eae71a6ef1039653fcdd96f0f2b.svg",
+    "static/media/logo.svg": "/animal-shelter/static/media/logo.082baa945c739fee926595f42441b2a4.svg",
+    "static/media/icon-food.svg": "/animal-shelter/static/media/icon-food.d9872f6c579c62bbafa455b330d1b45d.svg",
+    "static/media/icon-video.svg": "/animal-shelter/static/media/icon-video.4b1bed95f663ebc5f0d5e637e3c9e0d8.svg",
+    "static/media/icon-taxi.svg": "/animal-shelter/static/media/icon-taxi.5822b19643628e1d129c238f313d9f1f.svg",
+    "static/media/icon-temperature.svg": "/animal-shelter/static/media/icon-temperature.999c439aac7e6b60e35ab1ceebb64113.svg",
+    "static/media/icon-paw-orange.svg": "/animal-shelter/static/media/icon-paw-orange.2e903f62ff2c6dcaf85a9e210bb27624.svg",
+    "static/media/icon-paw-white.svg": "/animal-shelter/static/media/icon-paw-white.5397995365894dfee5590486486040ac.svg",
+    "index.html": "/animal-shelter/index.html",
+    "static/media/Vector.svg": "/animal-shelter/static/media/Vector.06a0fd634ec0deed8fc8.svg",
+    "static/media/icon-arrow-left.svg": "/animal-shelter/static/media/icon-arrow-left.02ae790fb4cabaaa6f8b1def924a49e5.svg",
+    "static/media/icon-arrow.svg": "/animal-shelter/static/media/icon-arrow.02ae790fb4cabaaa6f8b1def924a49e5.svg",
+    "main.0c11d1a5.css.map": "/animal-shelter/static/css/main.0c11d1a5.css.map",
+    "main.e63ea45a.js.map": "/animal-shelter/static/js/main.e63ea45a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c11d1a5.css",
+    "static/js/main.e63ea45a.js"
+  ]
+}
