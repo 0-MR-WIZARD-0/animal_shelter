@@ -23,4 +23,8 @@
         cursor: pointer;
     }
 
+    li + li{ 
+        margin-left: 40px; //
+    }
+
 }

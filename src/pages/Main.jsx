@@ -5,6 +5,9 @@ import SliderReviews from "../components/sliderReviews/SliderReviews";
 import SliderRoom from "../components/sliderRoom/SliderRoom";
 
 const Main = () => {
+
+
+
   return (
     <>
         <Header/>

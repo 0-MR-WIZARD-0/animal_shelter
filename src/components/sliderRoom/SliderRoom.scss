@@ -1,3 +1,4 @@
+@import '../../style/colors.scss';
 
 .productWrapper{
 
@@ -22,16 +23,27 @@
         left: 600px;
         top: 70px;
     }
+
     &__slider{
         display: flex;
         margin-left: 650px;
     }
+
+    li::before{
+        color: $orange;
+        content: "●";
+        padding: 0px 15px;
+    }
+
+    li+li{
+        margin-top: 10px; 
+    }
 }
 
-.number__arrows{
-    margin-top: 40px;
-    margin-left: 1000px;
-}
+// .number__arrows{
+
+//     margin-left: 1000px;
+// }
 
 .number__arrow{
     width: 40px;
@@ -42,4 +54,29 @@
     background: #fff;
     margin-left: 0.625rem;
     cursor: pointer;
+}
+
+.dotSlide {
+    display: flex;
+    margin-left: 260px;
+
+
+    div{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 30px 5px;
+        cursor: pointer;
+    }
+
+    .active { background-color: orange; }
+    .pasive { background-color: rgb(209, 209, 209); }
+}
+
+.WrapperSwitches{
+    display: flex;
+    align-items: center;
+    .number__arrows{
+        margin-left: 700px;
+    }
 }

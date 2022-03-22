@@ -1,13 +1,28 @@
 import React from 'react'
 import './SelectedRoomSlider.scss'
+import slide from '../../img/slide.jpg'
+import WhitePaw from '../../img/icon-paw-orange.svg'
 
 const SelectedRoomSlider = () => {
   return (
     <section>
         <h2>Выбранный номер</h2>
         <div className='SliderRoomSelected'>
-            <div>
-                <div className='SliderRoomSelected__item'></div>
+            <div className='SliderRoomSelected__flexRoom'>
+                <div className='SliderRoomSelected__flex'>
+                    <div className='SliderRoomSelected__flexItem'>
+                        <img alt="#" src={slide}/>
+                    </div>
+                    <div className='SliderRoomSelected__flexItem'>
+                        <img alt="#" src={slide}/>
+                    </div>
+                    <div className='SliderRoomSelected__flexItem'>
+                        <img alt="#" src={slide}/>
+                    </div>
+                </div> 
+                <div className='SliderRoomSelected__itemSelect'>
+                    <img alt="#" src={slide}/>
+                </div> 
             </div>
             <div>
                 <h1>Супер-Люкс</h1>
@@ -21,6 +36,11 @@ const SelectedRoomSlider = () => {
                     <li>Когтеточка</li>
                 </ul>
                 <p>Цена за сутки: 600 ₽</p>
+                <button className="buttonOrange">Забронировать
+                    <div className="buttonOrange__iconButtonWhite">
+                        <img alt="#" src={WhitePaw}/>
+                    </div>
+                </button>
             </div>
         </div>
         

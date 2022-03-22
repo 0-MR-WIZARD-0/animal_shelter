@@ -1,69 +1,26 @@
 .wrapperFilter{
-    .custom-checkbox{
-        position: relative;
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background-color: white;
-        border:1px solid rgba(128, 128, 128, 0.5);
-        vertical-align: sub;
-        margin-right: 5px;
-    }
-
-    .custom-checkbox::before{
-        content: '';
-        display: inline-block;
-        width: 13px;
-        height: 13px;
-        background-image: url('../../img/Vector.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%) scale(0);
-        transition:  0.2s ease-in;
-        margin-top: 1px;
-    }
-
-    .real-checkbox:checked + .custom-checkbox::before{
-        transform: translate(-50%,-50%) scale(1);
-    }
-
-    .real-checkbox{
-        width: 0;
-        height: 0;
-        opacity: 0;
-        position: absolute;
-        z-index: -1;
-    }
+    
     p, input, span, label{
         margin-top: 13px;
     }
+
     p{
         font-weight: bold;
-    }
-
-    input{
-        border: 1px solid #000;
     }
 
     &__price{
         display: flex;
         justify-content: space-evenly;
-        
-        input{
-           border: 1px solid rgba(128, 128, 128, 0.5); 
+    }
+
+    &__button{
+        display: flex;
+        flex-direction: column;
+        &>button{
+           margin-top: 25px; 
         }
+        
     }
-
-    input::placeholder{
-        padding-left: 10px;
-    }
-}
-
-.inputFitld{
-    width: 80px;
-    height: 30px;
     
 }
+

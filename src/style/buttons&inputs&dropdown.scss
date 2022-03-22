@@ -1,0 +1,194 @@
+@import './colors.scss';
+
+.buttonWhite{
+	margin-top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	min-height: 60px;
+	min-width: 240px;
+	background-color: $white;
+	border-radius: 35px;
+	padding-left: 20px;
+	font-weight: bold;
+	&__iconOrange{
+		display: flex;
+        background-color: $orange;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+		margin-left: 20px;
+	}
+	
+}
+
+.buttonOrange{
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	min-height: 60px;
+	min-width: 240px;
+	background-color: $orange;
+	border-radius: 35px;
+	padding-left: 20px;
+	color: white;
+	font-weight: bold;
+	&__iconButtonWhite{
+		display: flex;
+        background-color: $white;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+		margin-left: 20px;
+	}
+}
+
+.customCheckbox{
+
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	vertical-align: sub;
+	margin-right: 5px;
+
+	&::before{
+		content: '';
+		display: inline-block;
+		width: 13px;
+		height: 13px;
+		background-image: url('../img/Vector.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%) scale(0);
+		transition:  0.2s ease-in;
+		margin-top: 1px;
+	}
+
+}
+
+.realCheckbox{
+
+	width: 0;
+	height: 0;
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+
+	&:checked + .customCheckbox::before{
+		transform: translate(-50%,-50%) scale(1);
+	}
+
+}
+
+
+.inputField{
+	width: 80px;
+    height: 30px;
+	border: 1px solid $gray;
+	&::placeholder{
+		padding-left: 10px;
+	}
+}
+
+.buttonFillYellow{
+	height: 45px;
+	width: 240px;
+	border-radius: 35px;
+	background-color: $main-color;
+	font-weight: bold;
+}
+
+.buttonBorderYellow{
+	height: 45px;
+	width: 240px;
+	border-radius: 35px;
+	border: 1px solid $main-color;
+	font-weight: bold;
+}
+
+.dropdown-button{
+    position: relative;
+    display: block;
+    width: 200px;
+    text-align: left;
+    background: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    height: 46px;
+
+    padding-left: 20px;
+    padding-bottom: 13px;
+    padding-right: 35px;
+    padding-top: 13px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+
+	&::after{
+		content:"";
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+		width: 0;
+		height: 0;
+		border-width: 10.4px 6px 0 6px;
+		border-color: gray transparent transparent transparent;
+		border-style: solid;
+		pointer-events: none;
+	}
+
+}
+
+.dropdown{
+
+	position: relative;
+
+	&__List{
+
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		left: 0;
+		top: 52px;
+		background:white;
+		box-shadow: 0px 0px 20px $gray;
+		overflow: hidden;
+		border-radius: 6px;
+		width: 200px;
+		z-index: 1;
+
+		&ItemDrop{
+			margin: 0;
+			padding: 0;
+			border: 1px solid $gray;
+			border-bottom: 0px;
+			padding: 13px 20px;
+			cursor: pointer;
+			&:first-child{
+				border-radius: 6px 6px 0 0;
+			}
+			&:last-child{
+				border-radius: 0 0 6px 6px;
+    			border-bottom: 1px solid $gray;
+			}
+			&:hover{
+				background: rgba($main-color, 0.5);
+			}
+		}
+
+	}
+}
