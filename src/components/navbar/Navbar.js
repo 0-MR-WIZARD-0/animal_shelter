@@ -7,21 +7,17 @@ const ScrollToInfo = () => {
   map.scrollIntoView({block: "center"}); 
 } 
 
-const ScrollToReviews = () => {
-  let rewiews = document.querySelector('.sliderWrapperReviews')
-  rewiews.scrollIntoView({block: "center"}); 
-} 
-
 const ScrollToMap = () => {
   let map = document.querySelector('.footer')
   map.scrollIntoView({block: "center"}); 
 } 
 
 const navigateTo = () => {
+  let rewiew = document.querySelector('.sliderWrapperReviews')
   try {
-    let offsetTop = document.querySelector('.sliderWrapperReviews').offsetTop;
+    let offsetTop = rewiew.offsetTop;
     window.scrollTo({
-      top: offsetTop - 400,
+      top: offsetTop - 300,
       behavior: "smooth",
     });
   } catch (e) {
@@ -29,10 +25,10 @@ const navigateTo = () => {
   }
 };
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav className="wrapperNavbar">
-        <NavLink to="/"><img alt="#" src={Logo}/></NavLink>
+        <div><NavLink to="/"><img alt="#" src={Logo}/></NavLink></div>
         <ul className="wrapperNavbar__link">
             <li onClick={()=>ScrollToInfo()}>Почему мы?</li>
             <li><NavLink to="/OurRoom">Номера</NavLink></li>

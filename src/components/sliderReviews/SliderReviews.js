@@ -1,55 +1,59 @@
+import information from '../../json/Data.json'
+import "swiper/css";
+import "swiper/css/pagination";
 import './SliderReviews.scss'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 
-const SliderReviews = () => {
+const RenderReviews = () => {
+    const template = Object.keys(information.rewiews).map(item => 
+            <SwiperSlide className="sliderWrapperReviews__item" key={information.rewiews[item].id}>
+              <div className="sliderWrapperReviews__content">
+                <p>{information.rewiews[item].description}</p>
+              </div>  
+                <div className="sliderWrapperReviews__info">
+                  <p>{information.rewiews[item].author}</p>
+                  <p>{information.rewiews[item].date}</p>
+                </div>
+            </SwiperSlide>
+    )
+    return (
+      // <div className="sliderWrapperReviews">
+        <div>
+            {template}
+      </div> 
+    )
+}
+
+const SliderReviews = (props) => {
   return (
-    <section>
+    <section className="sliderWrapperReviews" key={props.id}>
         <h2>Отзывы</h2>
-        <div className="sliderWrapperReviews">
-          <article className="sliderWrapperReviews__item">
-            <p>Первый раз пришлось оставить нашего котика в
-              гостинице, очень переживали. Администратор
-              Мария каждый день высылала нам фото нашего
-              питомца, рассказывала, как он себя чувствует. И
-              мы и котик остались очень довольны!
-            </p>
-            <div className="sliderWrapperReviews__info">
-              <p>Валерия Гришаева</p>
-              <p>15 ноября, 2019</p>
-            </div>
-          </article>
-          <article className="sliderWrapperReviews__item">
-            <p>Первый раз пришлось оставить нашего котика в
-              гостинице, очень переживали. Администратор
-              Мария каждый день высылала нам фото нашего
-              питомца, рассказывала, как он себя чувствует. И
-              мы и котик остались очень довольны!
-            </p>
-            <div className="sliderWrapperReviews__info">
-              <p>Валерия Гришаева</p>
-              <p>15 ноября, 2019</p>
-            </div>
-          </article>
-          <article className="sliderWrapperReviews__item">
-            <p>Первый раз пришлось оставить нашего котика в
-              гостинице, очень переживали. Администратор
-              Мария каждый день высылала нам фото нашего
-              питомца, рассказывала, как он себя чувствует. И
-              мы и котик остались очень довольны!
-            </p>
-            <div className="sliderWrapperReviews__info">
-              <p>Валерия Гришаева</p>
-              <p>15 ноября, 2019</p>
-            </div>
-          </article>
-        </div>
-        <div className="number__arrows__rew">
-              <button className="number__arrow" href="###">
-                <img/>
-              </button>
-              <button className="number__arrow" href="###">
-                <img/>
-              </button>
-            </div>
+        <Swiper
+            slidesPerView={3}
+            spaceBetween={200}
+            slidesPerGroup={3}
+            loop={true}
+            autoplay={{
+              delay: 6000,
+              disableOnInteraction: false,
+            }}
+            loopFillGroupWithBlank={false}
+            modules={[Autoplay]}
+        >
+          {RenderReviews()}
+        </Swiper>
+        
+        {/* <div className='WrapperSwitches'>
+              <div className='dotSlide'>
+                <div className='active'></div>
+                <div className='pasive'></div>
+                <div className='pasive'></div>
+                <div className='pasive'></div>
+                <div className='pasive'></div>
+                <div className='pasive'></div>
+              </div>
+        </div> */}
     </section>
   )
 }

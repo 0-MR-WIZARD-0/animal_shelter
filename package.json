@@ -1,6 +1,6 @@
 {
-  "name": "animal-shelter",
-  "homepage": "https://0-MR-WIZARD-0.github.io/animal-shelter/",
+  "name": "animal_shelter",
+  "homepage": "https://0-MR-WIZARD-0.github.io/animal_shelter/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "react-scripts": "5.0.0",
     "react-yandex-maps": "^4.6.0",
     "sass": "^1.49.9",
+    "swiper": "^8.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

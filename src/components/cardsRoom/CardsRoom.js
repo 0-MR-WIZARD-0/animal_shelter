@@ -1,6 +1,7 @@
 import React from 'react'
 import WhitePaw from '../../img/icon-paw-orange.svg'
 import Filters from '../filters/Filters'
+import { NavLink } from 'react-router-dom'
 import information from '../../json/Data.json'
 import './CardsRoom.scss'
 
@@ -17,11 +18,11 @@ const RenderCard = () => {
                 <p>Оснащение номера: {information.rooms[item].equipment}</p>
                 <p>Цена за сутки: {information.rooms[item].price}</p>
             </div>
-            <button className="buttonOrange">Забронировать
+            <NavLink to="/SelectedRoom"><button className="buttonOrange">Забронировать
                 <div className="buttonOrange__iconButtonWhite">
                     <img alt="#" src={WhitePaw}/>
                 </div>
-            </button>
+            </button></NavLink>
         </div>
     )
     return (

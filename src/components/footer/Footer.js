@@ -3,14 +3,10 @@ import Navbar from '../navbar/Navbar'
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import LocationMarker from '../../img/logo.svg'
 
-
-const coordinate = () => {
-    return [59.93, 30.32]
-}
-
 const Footer = () => {
+
   return (
-    <footer className="footer">
+    <footer className="footer" id={1}>
         <div className="footer__top">
             <div className="footer__content">
                 <h3>Как нас найти</h3>
