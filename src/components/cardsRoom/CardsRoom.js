@@ -3,20 +3,23 @@ import WhitePaw from '../../img/icon-paw-orange.svg'
 import Filters from '../filters/Filters'
 import { NavLink } from 'react-router-dom'
 import information from '../../json/Data.json'
+import { useState } from 'react';
+import { square } from '../filters/Filters'
+import { equipment } from '../filters/Filters'
 import './CardsRoom.scss'
 
-const RenderCard = () => {
-    const template = Object.keys(information.rooms).map(item => 
-        <div key={information.rooms[item].id} className='wrapperOurRoom__gridItem'>
+export const RenderCard = (cards) => {
+    const template = cards.rooms.map(item => 
+        <div key={item.id} className='wrapperOurRoom__gridItem'>
             <div className='wrapperOurRoom__itemImg'>
-                <img alt="#" src={information.rooms[item].img}/>
+                <img alt="#" src={item.img}/>
             </div>
             <div className="wrapperOurRoom__gridItemInfo">
-                <h3>{information.rooms[item].title}</h3>
-                <p>Размеры (ШхГхВ) - {information.rooms[item].sizes}</p>
-                <p>Площадь - {information.rooms[item].square}</p>
-                <p>Оснащение номера: {information.rooms[item].equipment}</p>
-                <p>Цена за сутки: {information.rooms[item].price}</p>
+                <h3>{item.title}</h3>
+                <p>Размеры (ШхГхВ) - {item.sizes}</p>
+                <p>Площадь - {item.square}</p>
+                <p>Оснащение номера: {item.equipment}</p>
+                <p>Цена за сутки: {item.price}</p>
             </div>
             <NavLink to="/SelectedRoom"><button className="buttonOrange">Забронировать
                 <div className="buttonOrange__iconButtonWhite">
@@ -34,6 +37,8 @@ const RenderCard = () => {
 
 const CardsRoom = () => {
 
+  const [cards, setCards] = useState(()=>RenderCard(information))
+
   return (
     <section>
         <div className='wrapperSort'>
@@ -50,7 +55,7 @@ const CardsRoom = () => {
         </div>
         <div className='wrapperOurRoom'>
             <Filters/>
-            {RenderCard()}
+            {cards}
         </div>
     </section>
   )

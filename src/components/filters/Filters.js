@@ -1,7 +1,13 @@
 import React from 'react'
+import { useState } from 'react';
+import { RenderCard } from '../cardsRoom/CardsRoom'
+import information from '../../json/Data.json'
+import WhitePaw from '../../img/icon-paw-orange.svg'
+
+import { NavLink } from 'react-router-dom'
 import './Filters.scss'
 
-const square = [
+export const square = [
     '0,63 м2',
     '0,90 м2',
     '1,13 м2',
@@ -10,7 +16,7 @@ const square = [
     '2,88 м2'
 ];
 
-const equipment = [
+export const equipment = [
     'Пустой номер',
     'Лежак',
     'Когтеточка',
@@ -18,44 +24,76 @@ const equipment = [
     'Домик'
 ];
 
-const renderCheckbox = (props) => {
-    const checkbox = props.map(item => {
-        return (
-            <div className='checkbox' key={item}>
-                <label>
-                    <input type="checkbox" className='realCheckbox'/>
-                    <span className='customCheckbox'></span> {item}
-                </label>
-            </div>
-        );
-    });
-    return checkbox;
-}
-
 const Filters = () => {
-  return (
-    <div>
-        <div className='wrapperFilter'>
-            <p>Цена за сутки, ₽</p>
-            <div className='wrapperFilter__price'>
-                <input className='inputField' placeholder='от 100'></input>
-                <input className='inputField' placeholder='до 2000'></input>
-            </div>
-            <p>Площадь</p>
-                <div>
-                {renderCheckbox(square)}
+
+    const renderCheckbox = (props) => {
+        
+        const checkbox = props.map(item => {
+            return (
+                <div className='checkbox' key={item}>
+                    <label>
+                        <input type="checkbox" className='realCheckbox' name={item} onClick={(e)=>CheckingMatches(e)}/>
+                         <span className='customCheckbox'></span> {item}
+                    </label>
                 </div>
-            <p>Оснащение номера</p>
-                <div>
-                {renderCheckbox(equipment)}
+            );
+        });
+
+        return checkbox;
+
+    }
+
+    const CheckingMatches = (event) => {
+        
+        const {name, checked} = event.target
+
+        const array = []
+
+        if(checked){
+
+            information.rooms.map(item => {
+                if (name===item.square){
+                    array.push(item)
+                }
+            }) 
+
+            console.log(information.rooms);
+            console.log(array)
+
+        }
+      
+    }
+
+    const RenderFilterElement = () => {
+        
+    }
+
+    const ClearFilter = () => {}
+
+    return (
+        <div>
+            <div className='wrapperFilter'>
+                <p>Цена за сутки, ₽</p>
+                <div className='wrapperFilter__price'>
+                    <input className='inputField' placeholder='от 100'></input>
+                    <input className='inputField' placeholder='до 2000'></input>
                 </div>
-            <div className='wrapperFilter__button'>
-                <button className='buttonFillYellow'>Применить</button>
-                <button className='buttonBorderYellow'>Сбросить фильтр</button>
+                <p>Площадь</p>
+                    <div>
+                    {renderCheckbox(square)}
+                    </div>
+                <p>Оснащение номера</p>
+                    <div>
+                    {renderCheckbox(equipment)}
+                    </div>
+                <div className='wrapperFilter__button'>
+                    <button className='buttonFillYellow' onClick={()=>RenderFilterElement()}>Применить</button>
+                    <button className='buttonBorderYellow' onClick={()=>ClearFilter()}>Сбросить фильтр</button>
+                </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Filters
+

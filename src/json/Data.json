@@ -1,6 +1,7 @@
 {
-    "rooms": {
-        "room_1": {
+    
+    "rooms": [
+        {
             "id": 1,
             "img": "../img/economy.jpg",
             "title": "Эконом",
@@ -9,7 +10,16 @@
             "equipment": "отсутствует",
             "price": "100 ₽"
         },   
-        "room_2": {
+        {
+            "id": 10,
+            "img": "../img/economy.jpg",
+            "title": "Эконом",
+            "sizes": "90х70х180 см",
+            "square": "0,63 м2",
+            "equipment": "отсутствует",
+            "price": "100 ₽"
+        },   
+        {
             "id": 2,
             "img": "../img/economy-plus.jpg",
             "title": "Эконом плюс",
@@ -18,7 +28,7 @@
             "equipment": "лежак, когтеточка",
             "price": "200 ₽"
         },   
-        "room_3": {
+        {
             "id": 3,
             "img": "../img/comfort.jpg",
             "title": "Комфорт",
@@ -27,7 +37,7 @@
             "equipment": "лежак, когтеточка, игровой комплекс",
             "price": "250 ₽"
         },   
-        "room_4": {
+        {
             "id": 4,
             "img": "../img/suite.jpg",
             "title": "Сьют",
@@ -36,7 +46,7 @@
             "equipment": "лежак, когтеточка, игровой комплекс",
             "price": "350 ₽"
         },   
-        "room_5": {
+        {
             "id": 5,
             "img": "../img/lux.jpg",
             "title": "Люкс",
@@ -45,7 +55,7 @@
             "equipment": "лежак, когтеточка, игровой комплекс, домик",
             "price": "500 ₽"
         },   
-        "room_6": {
+        {
             "id": 6,
             "img": "../img/lux-super.jpg",
             "title": "Супер-Люкс",
@@ -54,7 +64,7 @@
             "equipment": "лежак, когтеточка, игровой комплекс, домик",
             "price": "600 ₽"
         }   
-    },
+    ],
     "rewiews":{
         "rewiew_1":{
             "id": "1",
