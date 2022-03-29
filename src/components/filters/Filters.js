@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react';
-import { RenderCard } from '../cardsRoom/CardsRoom'
+// import { RenderCard } from '../cardsRoom/CardsRoom'
 import information from '../../json/Data.json'
 import WhitePaw from '../../img/icon-paw-orange.svg'
 
 import { NavLink } from 'react-router-dom'
 import './Filters.scss'
+
+let array = []
 
 export const square = [
     '0,63 м2',
@@ -24,7 +26,7 @@ export const equipment = [
     'Домик'
 ];
 
-const Filters = () => {
+const Filters = ({setCards}) => {
 
     const renderCheckbox = (props) => {
         
@@ -47,25 +49,82 @@ const Filters = () => {
         
         const {name, checked} = event.target
 
-        const array = []
-
         if(checked){
 
-            information.rooms.map(item => {
+            information.rooms.filter((item) => {
                 if (name===item.square){
-                    array.push(item)
+                       
+                    array.push(item) 
+                    
+                    //  console.log(item);
                 }
+                
             }) 
 
-            console.log(information.rooms);
+            // console.log(information.rooms);
             console.log(array)
 
+            // array.forEach(elem=>{
+            //     // console.log(elem);
+            //     console.log(elem.id);
+            // })
+
         }
-      
+        else{
+            
+            information.rooms.filter((item) => {
+                
+            array.filter(checked=>{
+                array = []
+                // console.log(array);
+                // console.log(item.id);
+                // console.log(checked.id);
+                if(!(name===item.square&&checked.id!==item.id)){
+                //    console.log(checked);
+                    
+                    array.push(checked)
+                    
+                }
+                
+            }) 
+        })
+            console.log(array)
+        }
     }
 
-    const RenderFilterElement = () => {
+    const Render = (array) => {
+        const template = array.map(item => 
+            <div key={item.id} className='wrapperOurRoom__gridItem'>
+                <div className='wrapperOurRoom__itemImg'>
+                    <img alt="#" src={item.img}/>
+                </div>
+                <div className="wrapperOurRoom__gridItemInfo">
+                    <h3>{item.title}</h3>
+                    <p>Размеры (ШхГхВ) - {item.sizes}</p>
+                    <p>Площадь - {item.square}</p>
+                    <p>Оснащение номера: {item.equipment}</p>
+                    <p>Цена за сутки: {item.price}</p>
+                </div>
+                <NavLink to="/SelectedRoom"><button className="buttonOrange">Забронировать
+                    <div className="buttonOrange__iconButtonWhite">
+                        <img alt="#" src={WhitePaw}/>
+                    </div>
+                </button></NavLink>
+            </div>
+        )
+        return (
+           <div className='wrapperOurRoom__grid'>
+                {template}
+           </div> 
+        )
+    }
+
+    const RenderFilterElement = (array) => {
         
+        // setCards(<div>Иванов долбаеб</div>)
+
+        // console.log(array);
+        setCards(()=>Render(array))
     }
 
     const ClearFilter = () => {}
@@ -87,7 +146,7 @@ const Filters = () => {
                     {renderCheckbox(equipment)}
                     </div>
                 <div className='wrapperFilter__button'>
-                    <button className='buttonFillYellow' onClick={()=>RenderFilterElement()}>Применить</button>
+                    <button className='buttonFillYellow' onClick={()=>RenderFilterElement(array)}>Применить</button>
                     <button className='buttonBorderYellow' onClick={()=>ClearFilter()}>Сбросить фильтр</button>
                 </div>
             </div>

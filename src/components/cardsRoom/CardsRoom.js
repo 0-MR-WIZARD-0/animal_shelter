@@ -4,8 +4,6 @@ import Filters from '../filters/Filters'
 import { NavLink } from 'react-router-dom'
 import information from '../../json/Data.json'
 import { useState } from 'react';
-import { square } from '../filters/Filters'
-import { equipment } from '../filters/Filters'
 import './CardsRoom.scss'
 
 export const RenderCard = (cards) => {
@@ -39,6 +37,9 @@ const CardsRoom = () => {
 
   const [cards, setCards] = useState(()=>RenderCard(information))
 
+//   console.log(cards.props.children);
+//   console.log(information);
+
   return (
     <section>
         <div className='wrapperSort'>
@@ -54,7 +55,7 @@ const CardsRoom = () => {
             </div>
         </div>
         <div className='wrapperOurRoom'>
-            <Filters/>
+            <Filters setCards={setCards}/>
             {cards}
         </div>
     </section>
